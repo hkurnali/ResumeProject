@@ -1,0 +1,16 @@
+﻿@model ResumeProject.Models.TBLCATEGORY
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Güncelleme Sayfası</h2>
+<form method="post">
+
+    @Html.HiddenFor(x => x.CategoryID)
+    <br />
+    <label> Kategori İsmi</label>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Verileri Güncelle</button>
+</form>

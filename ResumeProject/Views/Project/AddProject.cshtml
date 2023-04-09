@@ -1,0 +1,21 @@
+﻿@model ResumeProject.Models.TBLPROJECT
+@{
+    ViewBag.Title = "AddProject";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Proje Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ProjectID)
+    <label>Proje Başlığı</label>
+    @Html.TextBoxFor(x => x.ProjectTitle, new { @class = "form-control" })
+    <br />
+    <label> Proje Açıklama</label>
+    @Html.TextBoxFor(x => x.ProjectDescription, new { @class = "form-control" })
+    <br />
+    <label> Proje Görsel</label>
+    @Html.TextBoxFor(x => x.ProjectImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Verileri Kaydet</button>
+</form>
