@@ -12,6 +12,8 @@ namespace ResumeProject.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbResumeEntities5 : DbContext
     {
@@ -32,5 +34,11 @@ namespace ResumeProject.Models
         public virtual DbSet<TBLTECNOLOGY> TBLTECNOLOGY { get; set; }
         public virtual DbSet<TBLCONTACT> TBLCONTACT { get; set; }
         public virtual DbSet<TBLCATEGORY> TBLCATEGORY { get; set; }
+        public virtual DbSet<TBLSERVICE> TBLSERVICE { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> CountDestekMesaji()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CountDestekMesaji");
+        }
     }
 }

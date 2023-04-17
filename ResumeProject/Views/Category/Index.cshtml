@@ -8,10 +8,11 @@
 
 <table class="table table-bordered">
     <tr>
-    <th>#</th>
-    <th>Kategori İsmi</th>
-    <th>Sil</th>
-    <th>Güncelle</th>
+        <th>#</th>
+        <th>Kategori İsmi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Mesaj Tür</th>
     </tr>
     @foreach(var item in Model)
             {
@@ -20,7 +21,7 @@
             <td>@item.CategoryName</td>
             <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-outline-success">Güncelle</a></td>
-
+            <td><a href="/Category/GetMessageBySubject/@item.CategoryID" class="btn btn-outline-success">Mesaj Tür</a></td>
         </tr>
 
 
